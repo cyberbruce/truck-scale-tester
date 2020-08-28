@@ -1,0 +1,13 @@
+version: '3'
+services: 
+    scale:
+        build: .
+        volumes:
+            - .:/app
+        ports:
+            - "3030:3000"    
+        environment:
+            - INCREMENT=1000
+            - MAX=100000
+            - INTERVAL=0.10
+        command: ruby main.rb
